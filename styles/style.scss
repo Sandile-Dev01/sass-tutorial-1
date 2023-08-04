@@ -1,0 +1,53 @@
+$primary-clr: #000000;
+$secondary-clr: #ffa372;
+$light-clr: #ffffff;
+
+$ff-primary: "Abel", sans-serif;
+
+$transition: 350ms ease-in-out;
+
+*,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $ff-primary;
+}
+
+body {
+  background-color: $primary-clr;
+  color: $secondary-clr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+
+  h1 {
+    font-size: 5ch;
+    transition: $transition;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+      color: $light-clr;
+      cursor: none;
+
+      &::after {
+        width: 100%;
+        padding: 0.2rem;
+        background-color: $light-clr;
+      }
+    }
+
+    &::after {
+      content: " ";
+      padding: 0.2rem;
+      background-color: $secondary-clr;
+      width: 0;
+      transition: $transition;
+      border-radius: 1.5rem;
+    }
+  }
+}
